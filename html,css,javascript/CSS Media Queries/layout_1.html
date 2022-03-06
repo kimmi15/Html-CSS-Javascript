@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: grid;
+            grid-template-rows: 60px 200px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas: 
+            "a a a a"
+            "b c d e";
+            grid-gap: 20px;
+        }
+       .box>div:nth-child(1){
+           grid-area: a;
+           background-color: yellow;
+       }
+       .box>div:nth-child(2){
+           background-color: red;
+           grid-area: b;
+       }
+       .box>div:nth-child(3){
+           background-color: green;
+           grid-area: c;
+       }
+       .box>div:nth-child(4){
+           background-color: blue;
+           grid-area: d;
+       }
+       .box>div:nth-child(5){
+           background-color: gray;
+           grid-area: e;
+       }
+       @media only screen and (min-width: 375px) and (max-width:768px) {
+            .box{
+                grid-template-rows: 60px 200px 200px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas: 
+                "a a"
+                "b d"
+                "c e";
+            }
+        }
+        @media only screen and (min-width: 0px) and (max-width:375px) {
+            .box{
+                grid-template-rows: 60px repeat(4, 100px);
+                grid-template-columns: 1fr;
+                grid-template-areas: 
+                "a"
+                "b"
+                "e"
+                "c"
+                "d";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>Navigation</div>
+        <div>Box 1</div>
+        <div> Box 2</div>
+        <div> Box 3</div>
+        <div> Box 4</div>
+    </div>
+</body>
+</html>

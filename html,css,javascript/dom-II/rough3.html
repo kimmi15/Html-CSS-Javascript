@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>div1{
+            display: flex;
+            height: 300px;
+            width: 800px;
+           border: 1px solid red;
+           margin: auto;
+        }
+        body>div1>div2{
+           margin: 30px;
+       }
+       button{
+           border-radius: 10px;
+           padding: 15px 25px;
+           color: white;
+           background-color: #007bff;
+           font-size: 20px;
+           border:transparent;
+       }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+var div1=document.createElement("div");
+var Imgae=document.createElement("img");
+var div2=document.createElement("div")
+var H1=document.createElement("h1");
+var H2=document.createElement("h2");
+var Button=document.createElement("button");
+Imgae.setAttribute("src","https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg");
+H1.textContent="Alice Liddel";
+H2.textContent="Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap , etc.";
+Button.textContent="view node"
+var bodytag=document.querySelector("body");
+div2.append(H1,H2,Button);
+div1.append(Imgae,div2);
+bodytag.append(div1)
+</script>
+<!-- var bodytag = document.querySelector("body");
+
+    Div1.append(H1, H2, Button);
+    Div.append(Img, Div1);
+    bodytag.append(Div); -->

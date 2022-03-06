@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body>div{
+           display: flex;
+           width:700px;
+           height: 340px;
+           border: 1px solid gray;
+           border-radius: 0px 10px 10px 0px;
+           margin: auto;
+       }
+       body>div>div{
+           margin: 30px;
+       }
+       button{
+           border-radius: 10px;
+           padding: 15px 25px;
+           color: white;
+           background-color: #007bff;
+           font-size: 20px;
+           border:transparent;
+       }
+    </style>
+</head>
+<body>
+</body>
+</html>
+
+<script>
+    var Div = document.createElement("div");
+    var Img = document.createElement("img");
+    var Div1 = document.createElement("div");
+    var H1 = document.createElement("h1")
+    var H2 = document.createElement("h2")
+    var Button = document.createElement("button")
+   
+    Img.setAttribute("src","https://via.placeholder.com/300x300")
+    H1.textContent="Alice Liddel";
+    H2.textContent="Alice is a freelance web designer and developer based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap , etc."
+    Button.textContent="View Pofile";
+    
+    var bodytag = document.querySelector("body");
+
+    Div1.append(H1, H2, Button);
+    Div.append(Img, Div1);
+    bodytag.append(Div);
+</script>

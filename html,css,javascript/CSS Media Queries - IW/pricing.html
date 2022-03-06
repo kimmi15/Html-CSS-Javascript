@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+            color:gray;
+        }
+        #heading{
+            color:rgb(2, 26, 49);
+            font-size: 40px;
+            font-weight: 800;
+            width:45%;
+            margin: auto;
+        }
+        .Description{
+           color: gray;
+           width:50%;
+           font-size: 20px;
+           padding: 40px;
+           margin:auto;
+        }
+        .container{
+            width:60%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap:20px;
+            margin:auto;
+        }
+        .box{
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .plantype{
+            color:rgb(2, 26, 49);
+            font-size: 30px;
+            padding: 20px;
+        }
+        .Duration{
+            font-style: italic;
+            padding-bottom: 15px;
+            font-size: 20px;
+        }
+        .Review{
+            padding:10px 20px 50px;
+        }
+        .button{
+           border-radius: 9px;
+           width:80%;
+           padding:20px;
+           border-color: #007aff;
+           font-size: 25px;
+           color: #007aff;
+           font-weight: bold;
+        }
+        #button{
+            padding-bottom: 20px;
+        }
+        .button:hover{
+            background-color: #007aff;
+            color:white;
+        }
+        .plan1{
+             color:teal;
+             font-size:40px;
+             font-weight: bold;
+             padding-top: 10px;
+        }
+        .plan2{
+             color:rgb(241, 130, 40);
+             font-size:40px;
+             font-weight: bold;
+             padding-top: 10px;
+        }
+        .plan3{
+             color:#007aff;
+             font-size:40px;
+             font-weight: bold;
+             padding-top: 10px;
+        }
+        @media only screen and (min-width:375px) and (max-width:768px) {
+            #heading{
+            color:rgb(2, 26, 49);
+            font-size: 35px;
+            font-weight: 800;
+            width:95%;
+            margin: auto;
+        }
+        .Description{
+           color: gray;
+           width:95%;
+           font-size: 20px;
+           padding: 40px;
+           margin:auto;
+        }
+            .container{
+                width:90%;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 5%;
+            }
+        }
+        @media only screen and (min-width:0px) and (max-width:375px) {
+            #heading{
+            color:rgb(2, 26, 49);
+            font-size: 30px;
+            font-weight: 800;
+            width:95%;
+            margin: auto;
+        }
+        .Description{
+           color: gray;
+           width:95%;
+           font-size: 20px;
+           padding: 40px;
+           margin:auto;
+        }
+            .container{
+                width:98%;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="heading">Choose a plan that right for your business</div>
+    <div class="Description"> We collect reviews from our users so you can get an honest opinion
+        of what an exprienxce with our website are really like!
+    </div>
+    <div class="container">
+        <div class="box">
+            <div class="plantype">Starter Plan</div>
+            <div class="plan1">Free</div>
+            <div class="Duration">per month</div>
+            <div class="Review">We Collect reviews from our users so you can get 
+                an honest opinion of what an experience with our website.
+            </div>
+            <div >
+                <button class="button"> Start Now</button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="plantype">Bussiness plan</div>
+            <div class="plan2">$39.00</div>
+            <div class="Duration">per month</div>
+            <div class="Review">We Collect reviews from our users so you can get 
+                an honest opinion of what an experience with our website.
+            </div>
+            <div >
+                <button class="button"> Start Now</button>
+            </div>
+        </div>
+        <div class="box">
+            <div class="plantype">Premium Plan</div>
+            <div class="plan3">$59.00</div>
+            <div class="Duration">per month</div>
+            <div class="Review">We Collect reviews from our users so you can get 
+                an honest opinion of what an experience with our website.
+            </div>
+            <div id="button">
+                <button class="button"> Start Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <select id = "gender">
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+        <input id = "input" type="number" placeholder="Type Your DOB"/>
+        <button onclick="judger()">Submit</button>
+    </div>
+</body>
+</html>
+<script>
+    
+    function judger() {
+    var age = document.querySelector("input").value;
+    var Gender = document.getElementById("gender").value;
+    if (Gender="F" && age >= 19) {
+      alert("the user is of the valid legal age to get married ")
+    } else if (Gender="M" && age >= 21) {
+      alert("the user is of the valid legal age to get married ")
+    }
+    else {
+        alert("the user is not of the valid legal age to get married ")
+    }
+  }
+</script>

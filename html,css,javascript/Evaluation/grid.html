@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            display: grid;
+            width:400px;
+            height:600px;
+            grid-template-areas: 
+            "a a"
+            "b c" 
+            "b d"
+            "e e"
+            "f f"; 
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-columns: repeat(2, 1fr); 
+            grid-gap: 20px;  
+            border:4px solid red;  
+            padding: 10px;  
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            font-size: 25px;
+            margin: auto;
+            grid
+        }
+        .Header{
+            grid-area: a;
+            background-color: #3d405b;
+
+        }
+        .Article{
+            grid-area: b;
+            background-color: #3d405b;
+        }
+        .Txt1{
+            grid-area: c;
+            background-color: #3d405b;
+        }
+        .txt2{
+            grid-area: d;
+            background-color: #3d405b;
+        }
+        .main{
+            grid-area: e;
+            background-color: #3d405b;
+        }
+        .foot{
+            grid-area: f;
+            background-color: #3d405b;
+        }
+        .box>div{
+           padding:35px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="Header">HEADER</div>
+        <div class="Article">ARTICLE</div>
+        <div class="Txt1">TEXT 1</div>
+        <div class="txt2"> TEXT 2</div>
+        <div class="main"> MAIN</div>
+        <div class="foot">FOOTER</div>
+    </div>
+</body>
+</html>

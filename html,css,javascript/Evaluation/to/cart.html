@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #displayCart{
+            width: 100%;
+        }
+        #displayCart>div{
+            display: flex;
+            margin-top: 40px;
+            border-bottom: 1px solid gray;
+        }
+        #displayCart>div>div{
+            width:400px;
+            font-size: 25px;
+            font-weight: bold;
+
+        }
+        #displayCart>div>div>div:nth-child(1){
+            margin-bottom: 55px;
+        }
+        #displayCart>div>h1{
+            width: 400px;
+        }
+        #displayCart img{
+            width: 250px;
+        }
+        #Total{
+            display: flex;
+        }
+        #Total>div{
+            width: 400px;
+            font-size: 30px;
+            font-weight: bold;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="displayCart"></div>
+    <div id="Total">
+       <div>Total</div>
+       <div></div>
+       <div id="total"></div>
+       <div id="totalqty"></div>
+       <div></div>
+       <div onclick="checkout()">checkout</div>
+    </div>
+</body>
+</html>
+<script>
+
+    var arr = JSON.parse(localStorage.getItem("nonVeg"));
+    display(arr);
+
+    function display(arr){
+        document.getElementById("total").innerHTML="";
+        document.getElementById("totalqty").innerHTML="";
+
+        var totalprice = 0;
+        var totalqty=0;
+        document.getElementById("displayCart").innerHTML="";
+        var d1 = document.createElement("div");
+        var d2 = document.createElement("div");
+        d2.innerHTML="";        
+        var d3 = document.createElement("div");
+        d3.innerHTML="Product";
+        var d4 = document.createElement("div");
+        d4.innerHTML="Price";
+        var d5 = document.createElement("div");
+        d5.innerHTML="Quantity";
+        var d6 = document.createElement("div");
+        d6.innerHTML="Increase/Decrease";
+        var d7 = document.createElement("div");
+        d7.innerHTML="Remove";
+        d1.append(d2, d3, d4, d5, d6, d7);
+        document.getElementById("displayCart").append(d1);
+
+        arr.map(function(ele, index){
+        var div = document.createElement("div");
+
+       var img = document.createElement("img");
+       img.src=ele.img
+
+        var Name = document.createElement("h1");
+        Name.innerHTML=ele.name;
+
+        var price = document.createElement("h1");
+        var prices =ele.price;
+        price.innerHTML=prices;
+        prices = prices.split("");
+        prices.shift();
+        prices = prices.join("");
+
+
+        var quaty = document.createElement("h1");
+        var qty = ele.qty
+        quaty.innerText= ele.qty;
+        
+        totalqty+=(+qty);
+        prices=prices*(+qty);
+        totalprice+=(+prices);
+        console.log(totalprice)
+
+        let div3 = document.createElement("div");
+        let div4 = document.createElement("div");
+        div4.innerText='+';
+        let div5 = document.createElement("div");
+        div5.innerText='-';
+        div3.append(div4, div5);
+
+        let div6 = document.createElement("div");
+        div6.addEventListener("click", function(){
+            Remove(index);
+        })
+        div6.textContent="Remove";
+
+        div.append(img, Name, price, quaty, div3, div6);
+        document.getElementById("displayCart").append(div);
+    })
+    document.getElementById("total").append("₹ " + totalprice);
+     document.getElementById("totalqty").innerText=totalqty;
+    }
+    
+    
+
+
+     function Remove(index){
+         arr.splice(index, 1);
+         localStorage.setItem("nonVeg", JSON.stringify(arr));
+         display(arr);
+     }
+     function checkout(){
+         window.location.href="checkout.html"
+     }
+</script>

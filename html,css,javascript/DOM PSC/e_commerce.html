@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #ebebf0;
+        }
+        body>div{
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 40px 30px;
+            width:1400px;
+            margin:auto;
+            margin-top: 50px;
+        }
+        body>div>div{
+            box-shadow:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width:420px
+        }
+        button{
+            width:420px;
+            height:40px;
+            background-color: green;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            border:transparent;
+        }
+        h4,h3{
+            margin:20px 30px;
+        }
+    
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var main = document.createElement("div");
+    document.querySelector("body").append(main);
+    var data = [
+    {
+      MRP: 699,
+      type: "Striped Round Neck T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700871/2020/1/22/f932ae44-0fb8-4b92-b7bc-f1756253294b1579692118186-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-1.jpg",
+    },
+    {
+      MRP: 699,
+
+      type: "Striped Round Neck T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/10424682/2019/10/30/a034179e-9db3-4a3a-bce0-abae4d1413531572419249956-Roadster-Men-Tshirts-2571572419248675-1.jpg",
+    },
+    {
+      MRP: 699,
+
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+    {
+      MRP: 699,
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700871/2020/1/22/f932ae44-0fb8-4b92-b7bc-f1756253294b1579692118186-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-1.jpg",
+    },
+    {
+      MRP: 699,
+
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/10424682/2019/10/30/a034179e-9db3-4a3a-bce0-abae4d1413531572419249956-Roadster-Men-Tshirts-2571572419248675-1.jpg",
+    },
+    {
+      MRP: 699,
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+    {
+      MRP: 699,
+
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+    {
+      MRP: 699,
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/10424682/2019/10/30/a034179e-9db3-4a3a-bce0-abae4d1413531572419249956-Roadster-Men-Tshirts-2571572419248675-1.jpg",
+    },
+    {
+      MRP: 699,
+
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+    {
+      MRP: 699,
+      type: "Men Printed Cotton T-shirt",
+      image_url:
+        "https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/12816440/2021/2/9/d81a95aa-a268-4c7b-9deb-b960ad1586c41612855488092-HERENOW-Men-Tshirts-5601612855486681-1.jpg",
+    },
+  ];
+
+   data.map(function(elem){
+       var Div = document.createElement("div");
+       var img = document.createElement("img");
+       img.setAttribute("src", elem.image_url);
+
+       var type = document.createElement("h3");
+       type.textContent=elem.type;
+
+       var MRP = document.createElement("h4");
+       MRP.textContent=elem.MRP;
+
+       var button = document.createElement("button");
+       button.textContent="Checkout"
+       document.querySelector("div").append(Div);
+       Div.append(img, type, MRP, button);
+   })
+</script>

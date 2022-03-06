@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1, .box2{
+           display:grid;
+           grid-gap: 10px;
+            margin: 50px;
+           justify-content:center;
+        }
+        .box1{
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(2, 100px);
+            grid-template-areas: 
+            "a a b e"
+            "c d b e";
+        }
+        .box2{
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: repeat(3, 100px);
+            grid-template-areas: 
+            "a a b b"
+            "c d d d"
+            "e e e e";
+        }
+        .box1>div, .box2>div{
+            background-color: #444444;
+            border-radius: 5px;
+            padding: 35px;
+            color: white;
+            font-size: 25px;
+        }
+        .box1>div:nth-child(1), .box2>div:nth-child(1){
+            grid-area: a;
+        }
+        .box1>div:nth-child(2), .box2>div:nth-child(2){
+            grid-area: b;
+        }
+        .box1>div:nth-child(3), .box2>div:nth-child(3){
+            grid-area: c;
+        }
+        .box1>div:nth-child(4), .box2>div:nth-child(4){
+            grid-area: d;
+        }
+        .box1>div:nth-child(5), .box2>div:nth-child(5){
+            grid-area: e;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+    </div>
+    <div class="box2">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+    </div>
+</body>
+</html>

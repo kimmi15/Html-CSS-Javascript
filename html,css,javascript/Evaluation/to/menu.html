@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dishes{
+            display: grid;
+            grid-template-columns: repeat(3, 30%);
+            grid-gap: 20px;
+            width: 90%;
+            margin: auto;
+        }
+        #dishes button{
+            width: 100%;
+            height: 30px;
+            background-color: blue;
+            border: transparent;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #dishes h3{
+            margin-left: 20px;
+        }
+        #dishes h2{
+            margin-left: 20px;
+        }
+        #cartMenu{
+            display: flex;
+            width: 100%;
+            height: 40px;
+            margin: auto;
+            justify-content: flex-end;
+            background-color: turquoise;
+        }
+        #cart{
+            margin: 0px 10px;
+            background-color: transparent;
+            color: white;
+            border: transparent;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #cartit{
+            margin: 10px 10px 10px 0px;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="cartMenu"><button id="cart" onclick="cartitem()">Item in cart -</button> <p id="cartit"></p></div>
+   <div id="dishes"></div> 
+</body>
+</html>
+<script>
+    async function meal(){
+        try{
+            let res = await fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
+            let data = await res.json()
+            displayMeal(data);
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+
+    meal();
+
+    function displayMeal(data){
+        for (let i = 0; i < data.categories.length; i++) {
+            let dishes = document.getElementById("dishes");
+              let div = document.createElement("div");
+
+              let img = document.createElement("img");
+              img.src=data.categories[i].strCategoryThumb;
+
+              let cata = document.createElement("h2");
+              cata.innerText=data.categories[i].strCategory;
+
+              let price = document.createElement("h3");
+              let X = 300+(i*10)+9
+              price.innerText="₹" + X;
+              let addToCart = document.createElement("button");
+              addToCart.innerHTML="Add To Cart";
+              addToCart.addEventListener("click", addcart)
+              
+              div.append(img, cata, price, addToCart);
+
+              dishes.append(div);
+              let arr =JSON.parse(localStorage.getItem("nonVeg")) ||[];
+                
+        }    var count = 0;
+
+        for(let i = 0; i < arr.length; i++) {
+        count+=(+arr[i].qty);
+        function countall(){
+
+        }
+    }
+    document.getElementById("cartit").innerHTML=count;
+    }
+    var quantity = 0;
+    function addcart(event){
+                    
+                    var x = event.target.previousSibling;
+                    var y = x.previousSibling;
+                    var z = y.previousSibling;
+                    var obj={
+                        img : z.src,
+                        name : y.innerHTML,
+                        price : x.innerHTML, 
+                        qty:1,
+                    }
+                    var flag=0;
+                    for(let i = 0; i < arr.length; i++){
+                        if(y.innerHTML==arr[i].name){
+                            arr[i].qty++
+                            flag=1;
+                        }
+                    }
+                    if(flag==0){
+                        arr.push(obj);
+                    }
+                    
+                    localStorage.setItem("nonVeg", JSON.stringify(arr));
+                    document.getElementById("cartit").innerHTML="";
+                    let count = 0;
+ 
+for(let i = 0; i < arr.length; i++) {
+count+=(+arr[i].qty);
+}
+document.getElementById("cartit").innerHTML=count;
+                }
+    var arr =JSON.parse(localStorage.getItem("nonVeg")) ||[];
+
+ function cartitem(){
+     window.location.href="cart.html"
+ }
+</script>

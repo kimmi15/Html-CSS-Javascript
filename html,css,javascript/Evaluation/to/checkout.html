@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #add{
+            width: 800px;
+            height: 760px;
+            margin: auto;
+            border: 1px solid black;
+        }
+        input{
+            width: 760px;
+            height: 40px;
+            margin: 20px 16px;
+        }
+        div{
+            font-size: 35px;
+            font-weight: bold;
+            margin: 20px;
+        }
+        button{
+            background-color:blue;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="add"> 
+        <div>Add new address</div>   
+    <form>
+       <input type="text" placeholder="Country*">
+       <input type="text" placeholder="Pincode*">
+       <input type="text" placeholder="Address Line 1*">
+       <input type="text" placeholder="Address Line 2*">
+
+       <div>Shipping details will be sent to:</div>
+       <input type="text" placeholder="Full Name*">
+       <input type="text" placeholder="Phone No.">
+    </form>
+    <input type="Submit" placeholder="Submit" onclick="alertFun()">
+    </div>
+
+    
+</body>
+</html>
+
+<script>
+
+function alertFun(event) {
+    setTimeout(function(){
+      alert("Your order is accepted")
+    }, 0)
+    setTimeout(function(){
+        alert("Your order is being cooked")
+    }, 3000)
+    setTimeout(function(){
+        alert("Your order is ready")
+    }, 8000)
+    setTimeout(function(){
+        alert("Order out for delivery")
+    }, 10000)
+    setTimeout(function(){
+        alert("Order delivered")
+    }, 12000)
+}
+</script>

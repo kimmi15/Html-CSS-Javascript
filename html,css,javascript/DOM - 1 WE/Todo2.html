@@ -1,0 +1,206 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dis{
+            display: none;
+        }
+        form{
+            padding-top: 50px;
+            width: 612px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+        }
+        .input{
+            font-size: 20px;
+            width: 300px;
+            height: 60px;
+            background-color: rgba(128, 128, 128, 0.425);
+        }
+        .input>input{
+            background-color: transparent;
+            border: transparent;
+            outline: transparent;
+            margin-left: 10px;
+        }
+        .input>div{
+            margin: 0px 0px 0px 10px;
+            padding-top: 10px;
+        }
+       /* ::-webkit-input-placeholder{
+           color: transparent;
+       } 
+       :hover::-webkit-input-placeholder{
+           color: gray;
+       }  */
+       #submit{
+        padding-top: 20px;
+           width: 612px;
+           margin: auto;
+       }
+       #submit>div{
+
+           margin: auto;
+           width: 300px;
+       }
+       #submit>div>input{
+           width: 300px;
+           height: 40px;
+           background-color: rgb(87, 204, 233);
+           border: transparent;
+           border-radius: 2px;
+       }
+       #downPart{
+           margin-top: 50px;
+           display: block;
+       }
+       th, td{
+           border: 2px solid black;
+           padding: 10px 20px;
+       }
+    </style>
+</head>
+<body>
+    <button id="but" onclick="fillForm()">click here to fill form</button>
+   <div id="dis">
+    <form >
+        <div class="input">
+            <div>Name</div>
+            <input id="name" onclick="changeFun()" type="text" placeholder="Type Your Name here">
+        </div>
+        <div class="input1 input">
+            <div>email</div>
+            <input id="mail" onclick="changeFun1()" type="email" placeholder="Type Your mail here">
+        </div>
+        <div class="input2 input">
+            <div>Phone</div>
+            <input id="phone" onclick="changeFun2()" type="text" placeholder="+91 XXXX-XXX-XXX">
+        </div>
+        <div class="input3 input">
+            <div>password</div>
+            <input id="pass" onclick="changeFun3()" type="password" placeholder="Type Your Name here">
+        </div>
+
+    </form>
+    <div id="submit"><div><input onclick="saveData()" type="Submit"></div></div>
+    <div id="downPart">
+        <table>
+            <thead>
+               <tr>
+                 <th>Name</th>
+                 <th>email</th>
+                 <th>Phone</th>
+                 <th>Password</th>
+               </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+   </div>
+  
+</body>
+</html>
+<script>
+    function fillForm(){
+        document.getElementById("dis").style.display="block";
+        document.getElementById("but").style.display="none";
+    }
+    function changeFun(){
+        document.querySelector(".input>div").style.fontSize="15px";
+        document.querySelector(".input").style.color="gray";
+        document.querySelector(".input").style.borderBottom="2px solid blue";
+    }
+    function changeFun1(){
+        document.querySelector(".input1>div").style.fontSize="15px";
+        document.querySelector(".input1").style.color="gray";
+        document.querySelector(".input1").style.borderBottom="2px solid blue";
+    }
+    function changeFun2(){
+        document.querySelector(".input2>div").style.fontSize="15px";
+        document.querySelector(".input2").style.color="gray";
+        document.querySelector(".input2").style.borderBottom="2px solid blue";
+    }
+    function changeFun3(){
+        document.querySelector(".input3>div").style.fontSize="15px";
+        document.querySelector(".input3").style.color="gray";
+        document.querySelector(".input3").style.borderBottom="2px solid blue";
+    }
+
+    var arr = JSON.parse(localStorage.getItem("saveObj"))||[];
+    display(arr);
+
+    function saveData(){
+     var name = document.getElementById("name").value;
+     var mail = document.getElementById("mail").value;
+     var phone =document.getElementById("phone").value;
+     var pass = document.getElementById("pass").value;
+
+     var obj = {
+         name : name,
+         mail : mail,
+         phone : phone,
+         pass : pass
+     }
+     arr.push(obj);
+       localStorage.setItem("saveObj", JSON.stringify(arr))
+       display(arr);
+    }
+    function display(arr){
+        document.querySelector("tbody").imnerHTML="";
+      arr.map(function(element, index){
+          var tr = document.createElement("tr");
+        var td1 = document.createElement("td");
+       var td2 = document.createElement("td");
+       var td3 = document.createElement("td");
+       var td4 = document.createElement("td");
+       td1.textContent=element.name;
+       td2.textContent=element.mail;
+       td3.textContent=element.phone;
+       td4.textContent="Delete";
+       td4.addEventListener("click", function(){
+       deleteTask(index)
+    });
+       
+       tr.append(td1, td2, td3, td4);
+       var tbody = document.querySelector("tbody")
+       tbody.append(tr);
+
+      })
+
+    }
+
+    function deleteTask(index){
+        console.log(index)
+        arr.splice(index, 1);
+        localStorage.setItem("saveObj", JSON.stringify(arr));
+        display(arr);
+    }
+
+</script> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+{
+    let b = 20;
+}
+console.log(b);
+</script>

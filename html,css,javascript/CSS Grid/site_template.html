@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .box {
+           width: 90%;
+           display:grid;
+           grid-template-rows: 80px 500px;
+           grid-template-columns: 30% 65%;
+           grid-gap:5%;
+           margin:auto;
+       }
+       .Red{
+           grid-area: 1/1/2/3;
+           background-color: red;
+       }
+       .Green{
+           grid-area:2/1/3/2;
+           background-color: green;
+       }
+       .Teal{
+           grid-area: 2/2/3/3;
+           background-color: teal;
+       }
+       .box>div{
+           border-radius: 5px;
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="Red"></div>
+        <div class="Green"></div>
+        <div class="Teal"></div>
+    </div>
+</body>
+</html>
